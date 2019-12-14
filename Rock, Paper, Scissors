@@ -1,3 +1,5 @@
+#This is my first program after a week of python!
+
 import random
 
 n = random.randint(0,2) # For the computer 0 = Rock, 1 = Paper, 2 = Scissors
