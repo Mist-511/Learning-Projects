@@ -1,0 +1,71 @@
+import random
+
+n = random.randint(0,2) # For the computer 0 = Rock, 1 = Paper, 2 = Scissors
+computer = n
+
+#These are the possible outcomes when playing. I have assigned the messages to be from the point of view from the computer
+Outcomes = { 
+  "RockRock": "Tie!",
+  "RockPaper": "Good job! You win!",
+  "RockScissors": "Nice try, but I won",
+  
+  "PaperRock": "Too bad. I'm the winner.",
+  "PaperPaper": "Tie!",
+  "PaperScissors": "Well done! Nice win!",
+  
+  "ScissorsRock": "And you win!",
+  "ScissorsPaper": "Better luck next time.",
+  "ScissorsScissors": "Tie!"
+}
+
+print("Welcome! Would you like to play Rock, Paper, Scissors?")
+
+def play_yn(): #Function to ask player if they want to play the game
+  answr = input ("Yes or No: ")
+  if (answr == "No"):
+    print("Good Bye")
+  elif (answr == "Yes"):
+    def game_time(): #Function to actually play the game, assuming the player said they want to
+      pick = input("Choose your weapon: Rock, Paper, or Scissors: ")
+      if n == 0 and pick == "Rock":
+        print(Outcomes["RockRock"])
+        again_ny()
+      elif n == 0 and pick == "Paper":
+        print(Outcomes["RockPaper"])
+        again_ny()
+      elif n == 0 and pick == "Scissors":
+        print(Outcomes["RockScissors"])
+        again_ny()
+      elif n == 1 and pick == "Rock":
+        print(Outcomes["PaperRock"])
+        again_ny()
+      elif n == 1 and pick == "Paper":
+        print(Outcomes["PaperPaper"])
+        again_ny()
+      elif n == 1 and pick == "Scissors":
+        print(Outcomes["PaperScissors"])
+        again_ny()
+      elif n == 2 and pick == "Rock":
+        print(Outcomes["ScissorsRock"])
+        again_ny()
+      elif n == 2 and pick == "Paper":
+        print(Outcomes["ScissorsPaper"])
+        again_ny()
+      elif n == 2 and pick == "Scissors":
+        print(Outcomes["ScissorsScissors"])
+        again_ny()
+      else:
+        print("That's not an option. Try again")
+        game_time()
+    def again_ny(): #Defining if I as the human would like to play another game.
+      print ("Would you like to play again? (Y/N): ")
+      again = input()
+      if again == "Y":
+          game_time()
+      else:
+        print("Thanks for playing with me.")  
+    game_time()
+  else:
+    print("Invalid Answer")
+    play_yn()
+play_yn()
